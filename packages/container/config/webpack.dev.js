@@ -4,6 +4,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const packageJson = require("../package.json");
 const commonConfig = require("./webpack.common");
 
+// TODO: Force build comment
+
 const devConfig = {
   mode: "development",
   devServer: {
