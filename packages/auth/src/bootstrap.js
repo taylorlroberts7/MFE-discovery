@@ -23,6 +23,8 @@ const mount = (el, { defaultHistory, onNavigate, initialPath }) => {
       const { pathname: nextPathname } = location;
       const { pathname } = history.location;
 
+      console.log("nextPathName -chk", nextPathname);
+
       if (pathname !== nextPathname) {
         history.push(nextPathname);
       }
@@ -30,11 +32,11 @@ const mount = (el, { defaultHistory, onNavigate, initialPath }) => {
   };
 };
 
-const MarketingApp = App;
+const AuthApp = App;
 
 //  If we are in development and in isolation, call mount immediately
 if (process.env.NODE_ENV === "development") {
-  const devRoot = document.querySelector("#_marketing-dev-root");
+  const devRoot = document.querySelector("#_auth-dev-root");
 
   if (devRoot) {
     mount(devRoot, { defaultHistory: createBrowserHistory() });
@@ -42,4 +44,4 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // If we are running through container, we should export the mount function
-export { mount, MarketingApp };
+export { mount, AuthApp };
